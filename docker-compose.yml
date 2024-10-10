@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  service1:
+    image: ${DOCKER_REGISTRY-}service1
+    build:
+      context: .
+      dockerfile: Service1/Dockerfile
+
+  service2:
+    image: ${DOCKER_REGISTRY-}service2
+    build:
+      context: .
+      dockerfile: Service2/Dockerfile
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
